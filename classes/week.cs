@@ -1,8 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using HW_3_3.interfaces;
+
+namespace HW_3_3.classes;
 
 class Weeks: IPrinter
 {
@@ -14,6 +13,6 @@ class Weeks: IPrinter
     }      
     Console.WriteLine();
   }
-  
+
   enum weeks {Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday}
 }

@@ -1,72 +1,44 @@
 using System;
-using HW_3_3.interfaces;
-namespace HW_3_3.classes;
+using HW_3_4.interfaces;
 
-class one_dim : Parent, Ione_dim
+namespace HW_3_4.classes;
+class one_dim<Type> : Parent<Type>
 {
     private int[] array;
-    protected int len_one_dim;
 
-    public one_dim (int len_one_dim, bool fill_rand = false) : base(fill_rand)
+    public one_dim (Ivalue_giver<Type> value_giver, int len_one_dim, bool fill_rand = false) : base(value_giver, fill_rand)
     {
-        ReCreate(fill_rand);
+        array = new int[len_one_dim];
+        Create();
     }
     
-    public override void ReCreate (bool fill_rand)
+    public override void Create()
     {
-        int[] array = new int[len_one_dim];
-        base.ReCreate(fill_rand);
+        base.Create();
     }
     
     protected override void Rand()
     {
         for (int i = 0; i<array.Length;i++)
         {
-            array[i] = rnd.Next(-100,100);
+            array[i] = value_giver.Get_Random();
         }
-    }
+    }   
    
     protected override void Manual()
     {
         for (int i = 0; i<array.Length; i++)
         {
-            Console.WriteLine($"элемент {i}:");
-            int x = int.Parse(Console.ReadLine());
-            array[i] = x;
+            array[i] = value_giver.Get_Manual();
         }
     }
-    
-    public override void Print()
-    {
-        Print(array);
-    }
-    public override double Average()
-    {
-        double sam = 0;
-        foreach(int elem in array)
-        {
-            sam+=elem;
-        }
-        return sam/array.Length;
-    }
-        
+          
 
-    private static void Print(int[] array)
+    public override void Print()
     {
         for (int i = 0; i < array.Length; i++)
         {
-            if (array[i] == int.MinValue)
-            {
-                continue;
-            }
             Console.Write($"{array[i]} ");
-        }
-        Console.WriteLine();            
-    }
-        
-    public void non_repeat()
-    {
-        int[] unique = array.Distinct().ToArray();
-        Print(unique);
+        }         
     }
 }

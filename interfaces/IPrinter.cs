@@ -1,4 +1,4 @@
-﻿namespace HW_3_3.interfaces;
+namespace HW_3_3.interfaces;
 
 interface IPrinter
 {

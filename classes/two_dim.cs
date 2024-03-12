@@ -41,7 +41,6 @@ sealed class two_dim : Parent, Itwo_dim
             }
         }
     }
-
     public override double Average()
     {
         int sam = 0;
@@ -51,8 +50,6 @@ sealed class two_dim : Parent, Itwo_dim
         }
         return sam / array.Length;
     }
-
-
     public void obr_chet()
     {
         for (int i = 0; i < array.GetLength(0); i++)
@@ -87,12 +84,10 @@ sealed class two_dim : Parent, Itwo_dim
             }
         }
     }
-
     public override void Print()
     {
         Print(array);
     }
-
     private static void Print(int[,] array2)
     {
         for (int i = 0; i < array2.GetLength(0); i++)
