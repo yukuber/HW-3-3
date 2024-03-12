@@ -1,5 +1,7 @@
-﻿﻿namespace HW_3_4.interfaces;
+﻿﻿namespace HW_3_3.interfaces;
+
 interface IParent : IPrinter
 {
-    void Create();
+    double Average();
+    void ReCreate(bool fill_rand);
 }
